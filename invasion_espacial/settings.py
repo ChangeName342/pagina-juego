@@ -6,13 +6,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECRET_KEY desde variable de entorno, con fallback para desarrollo
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-gp_*1$+lcrqns65#%=u*$1ik((x&%@8g=j6rsan+_28k-pdg&*')
 
-# DEBUG OFF para producción; puedes activar True para desarrollo local (cambiar manualmente o usar otra var)
-DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'  # Si pones DJANGO_DEBUG=False en env, queda False
+# DEBUG OFF para producción; puedes activar True para desarrollo local
+DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 # ALLOWED_HOSTS, incluir Render (ajusta el dominio que Render te asigna)
 ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', '*').split(',')
 
-# Resto igual...
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -25,6 +24,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # Para servir archivos estáticos en producción
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -67,11 +67,20 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 LANGUAGE_CODE = 'es-cl'
+
 TIME_ZONE = 'America/Santiago'
+
 USE_I18N = True
+
 USE_TZ = True
 
 STATIC_URL = '/static/'
+
 STATICFILES_DIRS = [BASE_DIR / 'static']
+
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+# WhiteNoise storage backend para compresión y cache en producción
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
