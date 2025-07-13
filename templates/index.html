@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Invasión Espacial</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav style="display: flex; justify-content: space-between; align-items: center; padding: 1em 2em; background-color: rgba(0, 0, 0, 0.85); box-shadow: 0 2px 10px #0ff;">
+        <div style="font-size: 1.5em; font-weight: bold; color: #0ff; text-shadow: 0 0 10px #0ff;">Invasión Espacial</div>
+        <div>
+            <a href="#inicio" style="margin-left: 20px; color: #fff; text-decoration: none;">Inicio</a>
+            <a href="#caracteristicas" style="margin-left: 20px; color: #fff; text-decoration: none;">Características</a>
+            <a href="#descarga" style="margin-left: 20px; color: #fff; text-decoration: none;">Descarga</a>
+        </div>
+    </nav>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="container" id="inicio">
+        <h1>INVASIÓN ESPACIAL</h1>
+        <p class="subtitulo">¡Un juego retro de naves y explosiones interestelares!</p>
+        <a id="descarga" class="btn" href="https://drive.google.com/file/d/1cGzNBfMKznSa7KzTLwWE0Lmer5QMWE0W/view?usp=drive_link" target="_blank">Descargar Juego</a>
+    </div>
+
+    <!-- SECCIÓN CARACTERÍSTICAS -->
+    <section id="caracteristicas" style="margin-top: 100px; padding: 2em;">
+        <h2 style="color: #fff; text-shadow: 0 0 10px #0ff;">Características del juego</h2>
+        <ul style="list-style: none; padding: 0; font-size: 1.2em;">
+            <li>🛸 Gráficos estilo pixel art</li>
+            <li>🎮 Controles intuitivos y rápidos</li>
+            <li>🚀 Oleadas de enemigos intergalácticos</li>
+            <li>🌌 Banda sonora retro-espacial</li>
+        </ul>
+    </section>
+
+</body>
+</html>
+

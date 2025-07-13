@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: black;
+    font-family: 'Courier New', monospace;
+    color: #0ff;
+    text-align: center;
+    background-image: url('../img/fondo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.container {
+    margin-top: 20vh;
+}
+
+h1 {
+    font-size: 4em;
+    color: #0ff;
+    text-shadow: 0 0 20px #0ff, 0 0 30px #00f;
+}
+
+.subtitulo {
+    font-size: 1.5em;
+    color: #fff;
+    text-shadow: 0 0 10px #f0f;
+    margin-bottom: 30px;
+}
+
+.btn {
+    padding: 15px 30px;
+    background-color: #ff0044;
+    color: white;
+    font-size: 1.5em;
+    text-decoration: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #ff0044;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #cc0033;
+    box-shadow: 0 0 20px #ff0044;
+}
